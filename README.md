@@ -1,3 +1,7 @@
+<p align="center">
+  <img src="logo.png" width="128" alt="PinnyBinny">
+</p>
+
 # PinnyBinny MCP Server
 
 Create classroom activities from a single prompt.
