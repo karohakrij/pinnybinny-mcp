@@ -1,0 +1,27 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "PinnyBinny Columns Board",
+  "x-version": 1,
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "columns"],
+  "properties": {
+    "title":       { "type": "string", "minLength": 1, "maxLength": 200 },
+    "preview":     { "type": "boolean", "default": false },
+    "color_theme": { "type": "string", "enum": ["yellow", "blue", "green", "pink", "purple", "orange"], "default": "yellow" },
+    "columns": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 10,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title"],
+        "properties": {
+          "title": { "type": "string", "minLength": 1, "maxLength": 100 },
+          "color": { "type": "string", "enum": ["blue", "yellow", "purple", "green", "neutral"], "default": "neutral" }
+        }
+      }
+    }
+  }
+}
