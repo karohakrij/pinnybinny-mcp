@@ -100,7 +100,7 @@ MCP access requires an active paid PinnyBinny plan.
 
 Free accounts can still use AI Import through the web interface by copying and pasting generated JSON.
 
-See https://pinnybinny.com/pricing for current plan details.
+See [pricing plans](https://pinnybinny.com/#pricing) for current plan details.
 
 ---
 
