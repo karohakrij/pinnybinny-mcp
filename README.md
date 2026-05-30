@@ -59,6 +59,8 @@ All tools support `"preview": true` — validates and returns a formatted previe
 
 ### 1. Get a token
 
+MCP tokens are available for paid PinnyBinny plans.
+
 1. Log in to [pinnybinny.com](https://pinnybinny.com)
 2. Go to **Settings → AI / MCP integrations**
 3. Click **Generate new token**
@@ -89,6 +91,16 @@ See [`examples/claude_desktop_config.json`](examples/claude_desktop_config.json)
 **Claude.ai (web)** — Settings → Integrations → add remote MCP server *(availability depends on region)*
 
 **ChatGPT** — Settings → Connected apps → add server
+
+---
+
+## Availability
+
+MCP access requires an active paid PinnyBinny plan.
+
+Free accounts can still use AI Import through the web interface by copying and pasting generated JSON.
+
+See https://pinnybinny.com/pricing for current plan details.
 
 ---
 
