@@ -24,7 +24,7 @@ Successfully tested with Claude.ai OAuth 2.0 and Dynamic Client Registration.
 > **No student data is processed by AI.** AI creates the activity. Students never interact with AI.
 
 <p align="center">
-  <img src="pinnybinny-claude-ai-custimize-connectors-mcp.png" widtg="900" alt="PinnyBinny MCP in Claude.ai">
+  <img src="pinnybinny-claude-ai-custimize-connectors-mcp.png" alt="PinnyBinny MCP in Claude.ai">
 </p>
 
 ---
