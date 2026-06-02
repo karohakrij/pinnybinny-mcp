@@ -14,12 +14,12 @@ Create flashcards, quizzes and classroom activities directly from your AI.
 PinnyBinny is a privacy-first classroom activity platform. This MCP server lets you create flashcard sets, quizzes, memory games, and sorting boards directly from your AI client — with a mandatory preview step before anything is saved.
 
 **Works with:**  
-- ✓ Claude.ai
-- ✓ Claude Desktop (expected)
-- ⚪ Cursor (not tested)
-- ⚪ ChatGPT (not tested)
+- ✓ Claude.ai — OAuth 2.0
+- ✓ ChatGPT — OAuth 2.0
+- ✓ Claude Desktop (Bearer token)
+- ⚪ Cursor (should work, not tested)
 
-Successfully tested with Claude.ai OAuth 2.0 and Dynamic Client Registration.
+Successfully tested with Claude.ai and ChatGPT using OAuth 2.0 and Dynamic Client Registration.
 
 > **No student data is processed by AI.** AI creates the activity. Students never interact with AI.
 
@@ -76,7 +76,8 @@ Two connection methods — depends on your client:
 | Client | Authentication |
 |--------|----------------|
 | Claude.ai (web) | OAuth 2.0 — no token needed |
-| Claude Desktop, Cursor, ChatGPT | Bearer token — token required |
+| ChatGPT | OAuth 2.0 — no token needed |
+| Claude Desktop, Cursor | Bearer token — token required |
 
 ---
 
@@ -90,7 +91,22 @@ Claude.ai performs OAuth 2.0 registration automatically — just add the URL and
 
 ---
 
-### Claude Desktop / Cursor / ChatGPT — Bearer token
+### ChatGPT — OAuth 2.0
+
+> ⚠️ **Developer Mode required.** Custom MCP servers in ChatGPT are only available with Developer Mode enabled.  
+> **Settings → Personalization → Enable Developer Mode** — do this first, or the Connectors option won't appear.
+
+1. Settings → Connectors → Add MCP server
+2. Server URL: `https://b.pinnybinny.com/api/mcp/v1`
+3. Authentication: **OAuth**
+
+ChatGPT performs OAuth 2.0 registration automatically. You will be redirected to PinnyBinny to approve access. **No token needed.**
+
+> **Note:** ChatGPT caches tool metadata. After any server-side update, go to Settings → Connectors → PinnyBinny → **Refresh**, then start a new chat.
+
+---
+
+### Claude Desktop / Cursor — Bearer token
 
 #### 1. Get a token
 
@@ -123,8 +139,6 @@ See [`examples/claude_desktop_config.json`](examples/claude_desktop_config.json)
 - URL: `https://b.pinnybinny.com/api/mcp/v1`
 - Header: `Authorization: Bearer pb_your_token_here`
 
-**ChatGPT** — Settings → Connected apps → add server
-
 ---
 
 ## Availability
@@ -139,20 +153,32 @@ See [pricing plans](https://pinnybinny.com/#pricing) for current plan details.
 
 ## Example prompts
 
+For best results, mention **PinnyBinny** explicitly — this tells the AI to use the tool instead of generating a plain text response.
+
 ```
-Create a flashcard set about Spanish food vocabulary for beginners. 15 cards.
+Create a flashcard set in PinnyBinny about Spanish food vocabulary for beginners. 15 cards.
 ```
 
 ```
-Create a multiple-choice quiz about photosynthesis for 7th grade, 10 questions.
+Create a multiple-choice quiz in PinnyBinny about photosynthesis for 7th grade, 10 questions.
 ```
 
 ```
-Create a memory matching game with chemical formulas and their names. 12 pairs.
+Create a memory matching game in PinnyBinny with chemical formulas and their names. 12 pairs.
 ```
 
 ```
-Create a sorting board: advantages and disadvantages of social media. 2 columns.
+Create a sorting board in PinnyBinny: advantages and disadvantages of social media. 2 columns.
+```
+
+Works in any language:
+
+```
+Vytvoř v PinnyBinny sadu kartiček na anglická slovíčka pro začátečníky. 15 kartiček.
+```
+
+```
+Vytvoř v PinnyBinny kvíz o fotosyntéze pro 7. třídu, 10 otázek.
 ```
 
 ---
