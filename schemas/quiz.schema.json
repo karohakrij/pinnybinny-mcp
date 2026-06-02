@@ -7,7 +7,8 @@
   "required": ["title", "questions"],
   "properties": {
     "title":             { "type": "string", "minLength": 1, "maxLength": 200 },
-    "preview":           { "type": "boolean", "default": false },
+    "preview":           { "type": "boolean", "default": true },
+    "preview_id":        { "type": "string" },
     "color_theme":       { "type": "string", "enum": ["yellow", "blue", "green", "pink", "purple", "orange"], "default": "yellow" },
     "time_per_question": { "type": "integer", "minimum": 5, "maximum": 120, "default": 15, "x-clamp": true },
     "questions_to_show": { "type": "integer", "minimum": 1, "maximum": 100, "default": 10, "x-clamp": true },
@@ -20,8 +21,8 @@
         "additionalProperties": false,
         "required": ["question", "answers", "correct_index"],
         "properties": {
-          "question":      { "type": "string", "minLength": 1, "maxLength": 1000 },
-          "answers":       { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "string", "minLength": 1, "maxLength": 500 } },
+          "question":      { "type": "string", "minLength": 1, "maxLength": 180 },
+          "answers":       { "type": "array", "minItems": 4, "maxItems": 4, "items": { "type": "string", "minLength": 1, "maxLength": 80 } },
           "correct_index": { "type": "integer", "minimum": 0, "maximum": 3 }
         }
       }
