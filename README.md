@@ -14,10 +14,10 @@ Create flashcards, quizzes and classroom activities directly from your AI.
 PinnyBinny is a privacy-first classroom activity platform. This MCP server lets you create flashcard sets, quizzes, memory games, and sorting boards directly from your AI client — with a mandatory preview step before anything is saved.
 
 **Works with:**  
-✓ Claude.ai
-✓ Claude Desktop (expected)
-⚪ Cursor (not tested)
-⚪ ChatGPT (not tested)
+- ✓ Claude.ai
+- ✓ Claude Desktop (expected)
+- ⚪ Cursor (not tested)
+- ⚪ ChatGPT (not tested)
 
 Successfully tested with Claude.ai OAuth 2.0 and Dynamic Client Registration.
 
@@ -71,7 +71,28 @@ All tools support `"preview": true` — validates and returns a formatted previe
 
 ## Setup
 
-### 1. Get a token
+Two connection methods — depends on your client:
+
+| Client | Authentication |
+|--------|----------------|
+| Claude.ai (web) | OAuth 2.0 — no token needed |
+| Claude Desktop, Cursor, ChatGPT | Bearer token — token required |
+
+---
+
+### Claude.ai (web) — OAuth 2.0
+
+1. Settings → Customize → Connectors → Add custom connector
+2. Remote MCP server URL: `https://b.pinnybinny.com/api/mcp/v1`
+3. OAuth Client ID + Secret: **leave empty**
+
+Claude.ai performs OAuth 2.0 registration automatically — just add the URL and approve the connection in your browser. **No token needed.**
+
+---
+
+### Claude Desktop / Cursor / ChatGPT — Bearer token
+
+#### 1. Get a token
 
 MCP tokens are available for paid PinnyBinny plans.
 
@@ -79,7 +100,7 @@ MCP tokens are available for paid PinnyBinny plans.
 2. Go to **Settings → AI / MCP integrations**
 3. Click **Generate new token**
 
-### 2. Add to your AI client
+#### 2. Add to your AI client
 
 **Claude Desktop** — add to `claude_desktop_config.json`:
 
@@ -101,12 +122,6 @@ See [`examples/claude_desktop_config.json`](examples/claude_desktop_config.json)
 **Cursor** — Settings → MCP / Tools → add remote server:
 - URL: `https://b.pinnybinny.com/api/mcp/v1`
 - Header: `Authorization: Bearer pb_your_token_here`
-
-**Claude.ai (web)** — Settings → Customize → Connectors → Add custom connector:
-- Remote MCP server URL: `https://b.pinnybinny.com/api/mcp/v1`
-- OAuth Client ID + Secret: **leave empty**
-
-Claude.ai performs OAuth 2.0 registration automatically. No manual client configuration is required — just add the URL and approve the connection in your browser.
 
 **ChatGPT** — Settings → Connected apps → add server
 
