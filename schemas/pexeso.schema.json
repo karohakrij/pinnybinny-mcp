@@ -7,7 +7,8 @@
   "required": ["title", "pairs"],
   "properties": {
     "title":       { "type": "string", "minLength": 1, "maxLength": 200 },
-    "preview":     { "type": "boolean", "default": false },
+    "preview":     { "type": "boolean", "default": true },
+    "preview_id":  { "type": "string" },
     "color_theme": { "type": "string", "enum": ["yellow", "blue", "green", "pink", "purple", "orange"], "default": "yellow" },
     "pairs": {
       "type": "array",
@@ -18,8 +19,8 @@
         "additionalProperties": false,
         "required": ["card1", "card2"],
         "properties": {
-          "card1": { "type": "string", "minLength": 1, "maxLength": 500 },
-          "card2": { "type": "string", "minLength": 1, "maxLength": 500 }
+          "card1": { "type": "string", "minLength": 1, "maxLength": 90 },
+          "card2": { "type": "string", "minLength": 1, "maxLength": 90 }
         }
       }
     }
