@@ -4,14 +4,26 @@
 
 # PinnyBinny MCP Server
 
-Create classroom activities from a single prompt.
+Create flashcards, quizzes and classroom activities directly from your AI.
 
 > "Create a vocabulary quiz about planets for 5th grade."  
 > → Preview → Approve → **Board URL**
 
 PinnyBinny is a privacy-first classroom activity platform. This MCP server lets you create flashcard sets, quizzes, memory games, and sorting boards directly from your AI client — with a mandatory preview step before anything is saved.
 
-<!-- Add screenshot here: teacher prompt → AI preview → board URL -->
+**Works with:**  
+✓ Claude.ai
+✓ Claude Desktop (expected)
+⚪ Cursor (not tested)
+⚪ ChatGPT (not tested)
+
+Successfully tested with Claude.ai OAuth 2.0 and Dynamic Client Registration.
+
+> **No student data is processed by AI.** AI creates the activity. Students never interact with AI.
+
+<p align="center">
+  <img src="pinnybinny-claude-ai-custimize-connectors-mcp.png" widtg="900" alt="PinnyBinny MCP in Claude.ai">
+</p>
 
 ---
 
@@ -88,7 +100,11 @@ See [`examples/claude_desktop_config.json`](examples/claude_desktop_config.json)
 - URL: `https://b.pinnybinny.com/api/mcp/v1`
 - Header: `Authorization: Bearer pb_your_token_here`
 
-**Claude.ai (web)** — Settings → Integrations → add remote MCP server *(availability depends on region)*
+**Claude.ai (web)** — Settings → Customize → Connectors → Add custom connector:
+- Remote MCP server URL: `https://b.pinnybinny.com/api/mcp/v1`
+- OAuth Client ID + Secret: **leave empty**
+
+Claude.ai performs OAuth 2.0 registration automatically. No manual client configuration is required — just add the URL and approve the connection in your browser.
 
 **ChatGPT** — Settings → Connected apps → add server
 
@@ -98,7 +114,7 @@ See [`examples/claude_desktop_config.json`](examples/claude_desktop_config.json)
 
 MCP access requires an active paid PinnyBinny plan.
 
-Free accounts can still use AI Import through the web interface by copying and pasting generated JSON.
+Free accounts can still use AI Import through the web interface — copy and paste generated JSON directly into the board editor, no token needed.
 
 See [pricing plans](https://pinnybinny.com/#pricing) for current plan details.
 
@@ -130,8 +146,8 @@ Most AI tools create content automatically. PinnyBinny doesn't.
 
 Every tool call goes through a two-step flow:
 
-1. **`preview: true`** — AI proposes content. Nothing is saved. Teacher sees exactly what will be created.
-2. **Approve** — Teacher confirms. Board is created. URL is returned.
+1. **`preview: true`** — AI proposes content. Server returns a `preview_id` and the exact content. Nothing is saved to the database yet.
+2. **Approve** — Teacher confirms. AI calls the tool again with `preview: false` and the `preview_id`. Server creates the board from the stored preview data — not from a new AI generation. This guarantees that the created board is identical to what the teacher approved.
 
 This matters in education:
 
