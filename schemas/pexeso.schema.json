@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "title": "PinnyBinny Memory Game (Pexeso)",
+  "x-version": 1,
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["title", "pairs"],
+  "properties": {
+    "title":       { "type": "string", "minLength": 1, "maxLength": 200 },
+    "preview":     { "type": "boolean", "default": true },
+    "preview_id":  { "type": "string" },
+    "color_theme": { "type": "string", "enum": ["yellow", "blue", "green", "pink", "purple", "orange"], "default": "yellow" },
+    "pairs": {
+      "type": "array",
+      "minItems": 1,
+      "maxItems": 50,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["card1", "card2"],
+        "properties": {
+          "card1": { "type": "string", "minLength": 1, "maxLength": 90 },
+          "card2": { "type": "string", "minLength": 1, "maxLength": 90 }
+        }
+      }
+    }
+  }
+}

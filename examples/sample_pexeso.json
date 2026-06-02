@@ -1,0 +1,12 @@
+{
+  "title": "Chemical Formulas",
+  "color_theme": "blue",
+  "pairs": [
+    { "card1": "H₂O",  "card2": "Water" },
+    { "card1": "CO₂",  "card2": "Carbon dioxide" },
+    { "card1": "NaCl", "card2": "Table salt" },
+    { "card1": "O₂",   "card2": "Oxygen" },
+    { "card1": "H₂",   "card2": "Hydrogen" },
+    { "card1": "N₂",   "card2": "Nitrogen" }
+  ]
+}

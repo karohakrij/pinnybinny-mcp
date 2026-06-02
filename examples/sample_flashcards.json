@@ -1,0 +1,14 @@
+{
+  "title": "Spanish Food Vocabulary",
+  "color_theme": "orange",
+  "cards": [
+    { "question": "apple",  "answer": "la manzana" },
+    { "question": "bread",  "answer": "el pan" },
+    { "question": "water",  "answer": "el agua" },
+    { "question": "milk",   "answer": "la leche" },
+    { "question": "cheese", "answer": "el queso" },
+    { "question": "egg",    "answer": "el huevo" },
+    { "question": "fish",   "answer": "el pescado" },
+    { "question": "rice",   "answer": "el arroz" }
+  ]
+}

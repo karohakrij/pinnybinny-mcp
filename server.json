@@ -1,0 +1,21 @@
+{
+  "name": "io.github.karohakrij/pinnybinny-mcp",
+  "description": "Create flashcards, quizzes, memory games and sorting boards directly from your AI. Privacy-first classroom activity platform for teachers.",
+  "homepage": "https://pinnybinny.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/karohakrij/pinnybinny-mcp.git"
+  },
+  "versions": [
+    {
+      "version": "1.0.0",
+      "release_date": "2026-06-02",
+      "packages": [
+        {
+          "registry_name": "remote",
+          "url": "https://b.pinnybinny.com/api/mcp/v1"
+        }
+      ]
+    }
+  ]
+}

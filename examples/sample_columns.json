@@ -1,0 +1,8 @@
+{
+  "title": "Social Media: Pros & Cons",
+  "color_theme": "purple",
+  "columns": [
+    { "title": "Advantages",    "color": "green" },
+    { "title": "Disadvantages", "color": "yellow" }
+  ]
+}

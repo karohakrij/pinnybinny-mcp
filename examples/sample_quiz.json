@@ -1,0 +1,27 @@
+{
+  "title": "Photosynthesis Quiz",
+  "color_theme": "green",
+  "time_per_question": 20,
+  "questions": [
+    {
+      "question": "What is the main product of photosynthesis?",
+      "answers": ["Glucose", "Oxygen", "Carbon dioxide", "Water"],
+      "correct_index": 0
+    },
+    {
+      "question": "Which organelle carries out photosynthesis?",
+      "answers": ["Mitochondria", "Nucleus", "Chloroplast", "Ribosome"],
+      "correct_index": 2
+    },
+    {
+      "question": "What gas do plants absorb during photosynthesis?",
+      "answers": ["Oxygen", "Nitrogen", "Carbon dioxide", "Hydrogen"],
+      "correct_index": 2
+    },
+    {
+      "question": "What is the role of chlorophyll in photosynthesis?",
+      "answers": ["Storing water", "Absorbing light energy", "Releasing CO2", "Breaking down glucose"],
+      "correct_index": 1
+    }
+  ]
+}

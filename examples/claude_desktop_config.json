@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "pinnybinny": {
+      "url": "https://b.pinnybinny.com/api/mcp/v1",
+      "headers": {
+        "Authorization": "Bearer pb_your_token_here"
+      }
+    }
+  }
+}
